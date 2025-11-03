@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Employee Management System</h1>
+  <div class="container">
+    <section class="form-section">
+      <h3>Add / Update Employee</h3>
+      <div class="form-grid">
+        <input type="number" id="empId" placeholder="Employee ID">
+        <input type="text" id="empName" placeholder="Name">
+        <input type="text" id="empPosition" placeholder="Position">
+        <input type="number" id="empSalary" placeholder="Salary">
+        <input type="text" id="empDepartment" placeholder="Department">
+        <select id="empAvailability">
+          <option value="true">Available</option>
+          <option value="false">Not Available</option>
+        </select>
+      </div>
+      <div class="button-group">
+        <button onclick="addEmployee()">Add Employee</button>
+        <button onclick="updateEmployee()">Update Employee</button>
+        <button onclick="removeEmployee()">Remove Employee</button>
+      </div>
+    </section>
+
+    <section class="search-section">
+      <h3>Search Employee</h3>
+      <input type="text" id="searchName" placeholder="Search by Name" onkeyup="searchEmployee()">
+    </section>
+
+    <section class="table-section">
+      <h3>Employee List</h3>
+      <table id="employeeTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Salary</th>
+            <th>Department</th>
+            <th>Availability</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="report-section">
+      <h3>Reports</h3>
+      <div class="button-group">
+        <button onclick="calculateTotalSalary()">Total Salary of Active Employees</button>
+        <button onclick="generateDeptReport()">Department-wise Salary Report</button>
+        <button onclick="sortBySalary()">Sort Employees by Salary</button>
+      </div>
+      <p id="output"></p>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
